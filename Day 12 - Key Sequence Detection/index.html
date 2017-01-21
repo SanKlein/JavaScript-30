@@ -7,6 +7,15 @@
 </head>
 <body>
 <script>
+  const pressed = []
+  const secretCode = 'parker'
+  window.addEventListener('keyup', (e) => {
+    pressed.push(String.fromCharCode(e.keyCode).toLowerCase())
+    pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length)
+    if (pressed.join('').includes(secretCode)) {
+      cornify_add()
+    }
+  })
 </script>
 </body>
 </html>
